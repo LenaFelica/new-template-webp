@@ -17,11 +17,6 @@ const pages = [
     // Allowed values are as follows:
     // read more: https://github.com/jantimon/html-webpack-plugin#options
   },
-  {
-    title: 'About page',
-    template: 'about.html',
-    filename: 'about.html'
-  }
 ]
 
 module.exports = pages
