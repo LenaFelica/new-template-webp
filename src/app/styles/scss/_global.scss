@@ -1,0 +1,46 @@
+*,
+*:before,
+*:after {
+  font-family: Jost;
+}
+
+body,
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  position: relative;
+  font-family: Jost;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3 {
+  font-weight: 400;
+}
+
+button {
+  border: none;
+}
+
+section {
+  padding: 120px 0;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1160px;
+  height: 100%;
+}
+
+.container-full {
+  margin: 0 auto;
+  max-width: 1720px;
+  width: 100%;
+}
+
