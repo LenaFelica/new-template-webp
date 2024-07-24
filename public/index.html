@@ -9,25 +9,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body class="page_body">
       <header class="header">
-        <div class="container_full header__container">
-          <div class="header__content">
-             <a href="#" class="header__logo">ROBO.SCHOOL</a>
-             <nav class="menu-nav">
-              <ul class="menu-nav__lists">
-                <li class="list_item">О школе</li>
-                <li class="list_item">Тренеры</li>
-                <li class="list_item">Стоимость</li>
-              </ul>
-             </nav>
-             <a href="tel:+78000001122" class="header__tel"></a>
-             <div class="header__mobile"></div>
-          </div>
-        </div>
+         <div class="container header__container">
+              <a href="#" class="header__logo logo">ROBO.SCHOOL</a>
+              <nav class="menu" title="Навигация" data-menu="">
+                 <ul class="menu__list">
+                    <li class="menu__item">
+                      <a class="menu__link" href="#about">О школе</a>
+                    </li>
+                    <li class="menu__item">
+                      <a class="menu__link" href="#price">Стоимость</a>
+                    </li>
+                    <li class="menu__item">
+                      <a class="menu__link" href="#trainers">Тренеры</a>
+                    </li>
+                 </ul>
+              </nav>
+              <a href="tel:+78000001122" class="header__tel tel">+7 800 000 11 22</a>
+              <div class="burger__menu"></div>
+         </div>
       </header>
       <main class="main">Я главный</main>
       <footer class="footer">Я футер</footer>
-
   </body>
 </html>
