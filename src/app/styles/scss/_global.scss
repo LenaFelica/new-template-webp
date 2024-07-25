@@ -1,20 +1,19 @@
 *,
 *:before,
 *:after {
-  font-family: "Jost", sans-serif;
+  font-family: Jost, sans-serif;
 }
 
 body,
 html {
   min-width: 320px;
-  min-height: 100%;
+  min-height: 100dvh;
   margin: 0;
   scroll-behavior: smooth;
   position: relative;
   font-family: Jost;
   font-weight: 400;
   line-height: 1.6;
-
 }
 
 a {
@@ -41,17 +40,15 @@ section {
   height: 100%;
 }
 
-.header__container {
-  margin: 0 auto;
-  max-width: 1720px;
-  width: 100%;
-}
+.container-wide {
+   margin: 0 auto;
+   max-width: 1720px;
+   width: 100%;
+ }
 
 .logo {
   font-size: 30px;
   font-weight: 700;
-  width: 228px;
-  height: 48px;
 }
 
 .tel {
@@ -59,19 +56,12 @@ section {
   font-weight: 600;
 }
 
-
-// .flex {
-//   display: flex;
-// }
-
-
 @media (max-width: 1200px) {
   .container {
     width: 100%;
     padding: 0 20px;
   }
 }
-
 
 @media (max-width: 768px) {
   header .container {
