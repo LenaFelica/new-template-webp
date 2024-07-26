@@ -38,13 +38,11 @@ section {
   margin: 0 auto;
   max-width: 1160px;
   height: 100%;
-}
 
-.container-wide {
-   margin: 0 auto;
-   max-width: 1720px;
-   width: 100%;
- }
+  &-wide {
+    max-width: 1720px;
+  }
+}
 
 .logo {
   font-size: 30px;
