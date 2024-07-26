@@ -1,12 +1,14 @@
 *,
 *:before,
 *:after {
-  font-family: Jost;
+  font-family: Jost, sans-serif;
 }
 
 body,
 html {
   min-width: 320px;
+  min-height: 100dvh;
+  margin: 0;
   scroll-behavior: smooth;
   position: relative;
   font-family: Jost;
@@ -36,11 +38,43 @@ section {
   margin: 0 auto;
   max-width: 1160px;
   height: 100%;
+
+  &-wide {
+    max-width: 1720px;
+  }
 }
 
-.container-full {
-  margin: 0 auto;
-  max-width: 1720px;
-  width: 100%;
+.logo {
+  font-size: 30px;
+  font-weight: 700;
 }
 
+.tel {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 100%;
+    padding: 0 20px;
+  }
+  .menu {
+    visibility: hidden;
+  }
+  .tel {
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  header .container {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 425px) {
+  header .container {
+    padding: 0 10px;
+  }
+}
