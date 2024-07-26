@@ -56,10 +56,16 @@ section {
   font-weight: 600;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
   .container {
     width: 100%;
     padding: 0 20px;
+  }
+  .menu {
+    visibility: hidden;
+  }
+  .tel {
+    visibility: hidden;
   }
 }
 
