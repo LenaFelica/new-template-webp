@@ -1,0 +1,44 @@
+.promo {
+  background-color: #141024;
+  color: #fff;
+  padding-top: 40px;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 40px;
+  }
+
+  &__left, &__right {
+    grid-column: 5 span;
+  }
+
+  &__left {
+    place-self: center;
+    padding-bottom: 50px;
+    padding-left: 30px;
+  }
+
+  &__title {
+    font-size: 70px;
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+
+  &__text {
+    font-size: 20px;
+    margin-bottom: 50px;
+    line-height: 32px;
+    max-width: 460px;
+  }
+
+  &__btn {
+    max-height: 80px;
+    padding: 25px 54px;
+  }
+}
+
+img {
+  position: relative;
+  left: 60px;
+}

@@ -30,10 +30,6 @@ button {
   border: none;
 }
 
-section {
-  padding: 120px 0;
-}
-
 .container {
   margin: 0 auto;
   max-width: 1160px;
@@ -77,4 +73,17 @@ section {
   header .container {
     padding: 0 10px;
   }
+}
+
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #D52027;
+  border-radius: 5px;
+  border: 2px solid #D52027;
+  color: #fff;
+  grid-column: 1/3 span;
+  grid-row: 2/1 span;
 }
