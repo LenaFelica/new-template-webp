@@ -1,19 +1,19 @@
 .promo {
   position: relative;
   background-color: #141024;
-  height: 100%;
+  height: calc(100dvh - 108px);
+  overflow: hidden;
+  min-height: 100vh;
 
   &__content {
     display: flex;
-    padding-bottom: 400px;
+    height: 100%;
   }
 
   &__text {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    padding-top: 266px;
-    margin-right: 100px;
+    margin-top: 266px;
     color: #fff;
   }
 
@@ -41,10 +41,8 @@
 
 img {
   position: absolute;
-
-  left: calc(48.5vw - 25px);
-  padding-top: 70px;
+  left: 48%;
+  top: 84px;
   width: 783px;
   height: auto;
-  max-width: 100%;
 }
