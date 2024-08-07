@@ -50,7 +50,29 @@ button {
 .tel {
   font-size: 30px;
   font-weight: 600;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 54px;
+  cursor: pointer;
+  font-size: 18px;
+  background-color: #D52027;
+  border-radius: 5px;
+  color: #fff;
+  transition: background-color 0.3s ease;
+
+  &:hover{
+    background-color: #ac0c12;
+  }
+}
+
 
 @media (max-width: 1024px) {
   .container {
@@ -77,12 +99,3 @@ button {
   }
 }
 
-.btn {
-  display: inline-block;
-  cursor: pointer;
-  font-size: 18px;
-  background-color: #D52027;
-  border-radius: 5px;
-  border: 2px solid #D52027;
-  color: #fff;
-}

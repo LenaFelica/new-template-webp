@@ -3,7 +3,7 @@
   background-color: #141024;
   height: calc(100dvh - 108px);
   overflow: hidden;
-  min-height: 100vh;
+  max-height: 972px;
 
   &__content {
     display: flex;
@@ -13,36 +13,32 @@
   &__text {
     display: flex;
     flex-direction: column;
-    margin-top: 266px;
+    align-items: flex-start;
+    margin-top: 236px;
     color: #fff;
   }
 
   &__title {
     font-size: 70px;
     font-weight: 600;
-    margin-bottom: 18px;
   }
 
   &__description {
     font-size: 20px;
-    margin-bottom: 50px;
+    margin-top: 18px;
     line-height: 32px;
     max-width: 460px;
   }
 
   &__btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 79px;
-    width: 260px;
+    margin-top: 50px;
   }
 }
 
-img {
+.promo__img {
   position: absolute;
   left: 48%;
-  top: 84px;
+  top: 54px;
   width: 783px;
   height: auto;
 }
