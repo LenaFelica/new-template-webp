@@ -1,0 +1,32 @@
+.about {
+  padding: 130px 0;
+
+  &__desc {
+    max-width: 891px;
+    text-align: start;
+    font-size: 30px;
+  }
+
+  &__items {
+    margin-top: 48px;
+    display: flex;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 290px;
+    padding-right: 30px;
+  }
+
+  &__item-number {
+    font-size: 70px;
+    font-weight: 600;
+    color: #D52027;
+  }
+
+  &__item-text {
+    font-size: 18px;
+  }
+}
