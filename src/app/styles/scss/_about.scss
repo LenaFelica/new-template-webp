@@ -2,22 +2,22 @@
   padding: 130px 0;
 
   &__desc {
-    max-width: 891px;
-    text-align: start;
+    max-width: 890px;
     font-size: 30px;
   }
 
   &__items {
-    margin-top: 48px;
     display: flex;
+    flex-wrap: wrap;
+
+    margin-top: 48px;
+    gap: 30px;
   }
 
   &__item {
     display: flex;
     flex-direction: column;
-
-    max-width: 290px;
-    padding-right: 30px;
+    flex-basis: 260px;
   }
 
   &__item-number {
