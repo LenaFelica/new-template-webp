@@ -1,0 +1,35 @@
+.about {
+  padding: 130px 0;
+
+  &__desc {
+    max-width: 890px;
+    font-size: 30px;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    margin-top: 48px;
+    gap: 40px;
+  }
+
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 260px;
+  }
+
+  &__item-number {
+    font-size: 70px;
+    font-weight: 600;
+    color: #D52027;
+    white-space: nowrap;
+  }
+
+  &__item-text {
+    font-size: 18px;
+  }
+}
