@@ -1,0 +1,37 @@
+
+.profit {
+  min-width: 485px;
+  background-color: #F9F9F9;
+
+  &__title {
+    font-size: 50px;
+    font-weight: 600;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    margin-top: 90px;
+    gap: 40px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 360px;
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 1.6em;
+    margin-top: 20px;
+  }
+
+}
