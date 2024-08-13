@@ -27,9 +27,59 @@
     font-weight: 600;
   }
 
+
   &__text {
     font-size: 18px;
     margin-top: 20px;
+    opacity: 0.7;
+  }
+}
+//  tooltip //
+
+.tooltip {
+    display: inline-flex;
+    position: relative;
+    cursor: help;
+
   }
 
+.tooltip__icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #141024;
+    opacity: 8%;
+
+    &:hover{
+    background: none;
+    opacity: 100%;
+  }
 }
+  .icon {
+    margin-top: 6px;
+    margin-left: 10px;
+  }
+
+ .tooltip__text {
+    position: absolute;
+    font-size: 16px;
+    font-weight: 400;
+    left: -2px;
+    bottom: 30px;
+    background-color: #fff;
+    padding: 15px 20px;
+    width: 255px;
+    height: 55px;
+    border-radius: 10px;
+    color: #141024;
+    opacity: 0;
+    box-shadow: 20px -17px 50px -25px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
+    visibility: hidden;
+  }
+
+  .tooltip:hover
+  .tooltip__text {
+    opacity: 0.7;
+    visibility: visible;
+  }
+
