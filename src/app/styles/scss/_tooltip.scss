@@ -3,25 +3,23 @@
   display: inline-flex;
   position: relative;
   cursor: help;
+  padding-top: 6px;
 
-  .tooltip__icon {
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 24px;
     height: 24px;
     border-radius: 50%;
     background-color: #e5e5e5;
-
-    &-img {
-      margin-top: 6px;
-      margin-left: 10px;
-    }
   }
 
-  .tooltip__text {
+  &__text {
     position: absolute;
     font-size: 16px;
     font-weight: 400;
-    left: -2px;
-    bottom: 30px;
+    bottom: 100%;
     background-color: #fff;
     padding: 15px 20px;
     width: 255px;
@@ -31,8 +29,7 @@
     box-shadow: 20px -17px 50px -25px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
     display: none;
   }
-  &:hover
-  .tooltip__text {
+  &:hover .tooltip__text {
     opacity: 0.7;
     display: unset !important;
   }
