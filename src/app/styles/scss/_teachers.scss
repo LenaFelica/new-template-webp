@@ -1,0 +1,70 @@
+.teachers {
+  &-title {
+    font-size: 50px;
+    font-weight: 600;
+  }
+
+  &-list {
+    display: flex;
+    gap: 40px;
+    margin-top: 60px;
+
+    overflow: hidden;
+  }
+
+  &-item {
+    flex-basis: 360px;
+
+    &__slider {
+      flex-shrink: 0;
+      position: relative;
+      height: 100%;
+    }
+
+    &__name {
+      font-size: 24px;
+      font-weight: 600;
+      margin-top: 20px;
+    }
+
+    &__desc {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    
+    &__btn {
+      font-size: 18px;
+      margin-top: 20px;
+      color: #D52027;
+      text-align: start;
+    }
+  }
+
+  &-controls {
+    margin-top: 77px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__nav {
+      margin-right: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    &__scrollbar {
+      width: 360px;
+      height: 5px;
+      border-radius: 40px;
+      background: #ececed;
+    }
+
+    &__thumb {
+      cursor: pointer;
+      width: 260px;
+      height: 5px;
+      border-radius: 40px;
+      background: #141024;
+    }
+  }
+}
+
