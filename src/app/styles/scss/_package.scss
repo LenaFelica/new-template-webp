@@ -1,0 +1,62 @@
+.package {
+  &-title {
+    font-size: 50px;
+    font-weight: 600;
+  }
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    gap: 40px;
+    margin-top: 80px;
+  }
+  &-item {
+    display: flex;
+    flex-direction: column;
+    height: 460px;
+    flex-basis: 360px;
+    width: 100%;
+    border: 2px solid #dddce0;
+    border-radius: 20px;
+    transition: all .4s ease;
+
+    &:hover {
+        background-color: #141024;
+        color: #fff;
+        transform: scale(1.1, 1.1);
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+      height: 100%;
+      padding: 40px;
+    }
+
+    &__title {
+      font-size: 30px;
+      font-weight: 600;
+    }
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      flex: 1 1 auto;
+      margin-top: 60px;
+    }
+
+    &__price {
+      font-size: 50px;
+      font-weight: 600;
+    }
+
+    &__desc {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+  }
+}
