@@ -11,6 +11,7 @@
     gap: 40px;
     margin-top: 80px;
   }
+
   &-item {
     display: flex;
     flex-direction: column;
@@ -19,18 +20,18 @@
     width: 100%;
     border: 2px solid #dddce0;
     border-radius: 20px;
-    transition: all .4s ease;
+    transition: transform 1s ease, background-color 1s ease;
 
     &:hover {
         background-color: #141024;
+        border: none;
         color: #fff;
-        transform: scale(1.1, 1.1);
+        transform: scale(1.1);
     }
 
     &__content {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       text-align: center;
       height: 100%;
       padding: 40px;
@@ -39,13 +40,48 @@
     &__title {
       font-size: 30px;
       font-weight: 600;
+      display: inline-block;
+      width: 150px;
+      margin: 0 auto;
+      text-transform: uppercase;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 3px;
+        background: #141024;
+        text-align: center;
+        margin-right: 10px;
+        vertical-align: middle;
+        -webkit-baseline: middle;
+
+        -webkit-transform: translate(0px, -2px);
+        -moz-transform: translate(0px, -2px);
+        transform: translate(0%, -2px);
+      }
+
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 3px;
+        background: #141024;
+        text-align: center;
+        margin-left: 10px;
+        vertical-align: middle;
+        -webkit-baseline: middle;
+
+        -webkit-transform: translate(0px, -2px);
+        -moz-transform: translate(0px, -2px);
+        transform: translate(0px, -2px);
+      }
     }
 
     &__text {
       display: flex;
       flex-direction: column;
       text-align: center;
-      flex: 1 1 auto;
       margin-top: 60px;
     }
 
@@ -57,6 +93,10 @@
     &__desc {
       font-size: 18px;
       margin-top: 20px;
+    }
+
+    &__btn {
+      margin-top: auto;
     }
   }
 }
