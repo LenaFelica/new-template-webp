@@ -15,67 +15,52 @@
   &-item {
     display: flex;
     flex-direction: column;
+    text-align: center;
     height: 460px;
     flex-basis: 360px;
-    width: 100%;
     border: 2px solid #dddce0;
     border-radius: 20px;
-    transition: transform 1s ease, background-color 1s ease;
+    padding: 40px;
+    transition: transform .2s ease, background-color .2s ease, border .2s ease, color .2s ease;
 
     &:hover {
         background-color: #141024;
-        border: none;
+        border: 2px solid #141024;
         color: #fff;
         transform: scale(1.1);
-    }
-
-    &__content {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      height: 100%;
-      padding: 40px;
+        :before,
+        :after {
+          background-color: #fff;
+        }
     }
 
     &__title {
       font-size: 30px;
       font-weight: 600;
-      display: inline-block;
-      width: 150px;
       margin: 0 auto;
+      width: max-content;
       text-transform: uppercase;
+      position: relative;
 
-      &::before {
-        content: "";
-        display: inline-block;
-        width: 20px;
-        height: 3px;
-        background: #141024;
-        text-align: center;
-        margin-right: 10px;
-        vertical-align: middle;
-        -webkit-baseline: middle;
-
-        -webkit-transform: translate(0px, -2px);
-        -moz-transform: translate(0px, -2px);
-        transform: translate(0%, -2px);
-      }
-
+      &::before,
       &::after {
         content: "";
-        display: inline-block;
-        width: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: background-color .2s ease;
+        position: absolute;
+        width: 19px;
         height: 3px;
-        background: #141024;
-        text-align: center;
-        margin-left: 10px;
-        vertical-align: middle;
-        -webkit-baseline: middle;
+        background-color: #141024;
+       }
 
-        -webkit-transform: translate(0px, -2px);
-        -moz-transform: translate(0px, -2px);
-        transform: translate(0px, -2px);
-      }
+       &::before {
+         left: -33px;
+       }
+
+       &::after {
+         right: -33px;
+       }
     }
 
     &__text {
