@@ -6,6 +6,7 @@
 
   &-list {
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
     position: relative;
     gap: 40px;
@@ -16,7 +17,6 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    height: 460px;
     flex-basis: 360px;
     border: 2px solid #dddce0;
     border-radius: 20px;
@@ -28,6 +28,7 @@
         border: 2px solid #141024;
         color: #fff;
         transform: scale(1.1);
+
         :before,
         :after {
           background-color: #fff;
@@ -37,7 +38,7 @@
     &__title {
       font-size: 30px;
       font-weight: 600;
-      margin: 0 auto;
+      align-self: center;
       width: max-content;
       text-transform: uppercase;
       position: relative;
@@ -52,15 +53,14 @@
         width: 19px;
         height: 3px;
         background-color: #141024;
-       }
+      }
 
-       &::before {
-         left: -33px;
-       }
-
-       &::after {
-         right: -33px;
-       }
+      &::before {
+        left: -33px;
+      }
+      &::after {
+        right: -33px;
+      }
     }
 
     &__text {
@@ -68,6 +68,7 @@
       flex-direction: column;
       text-align: center;
       margin-top: 60px;
+      margin-bottom: 33px;
     }
 
     &__price {
