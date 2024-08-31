@@ -1,0 +1,56 @@
+.course {
+  background-color: #D52027;
+  background-image: url(/src/shared/img/percent.svg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: #fff;
+  padding: 87px 0;
+
+  &__content {
+    display: flex;
+    height: 100%;
+    padding: 0 55px;
+  }
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 500px;
+    margin-top: 20px;
+
+    &__title {
+      font-size: 36px;
+      font-weight: 600;
+    }
+
+    &__desc {
+      font-size: 20px;
+      margin-top: 25px;
+    }
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 60px;
+    gap: 10px;
+
+    &__input {
+      height: 64px;
+      background-color: #F6F6F6;
+      color: #282944ed;
+      padding-left: 20px;
+      border-radius: 5px;
+    }
+
+    &__btn {
+      height: 64px;
+      width: 500px;
+      background-color: #141024;
+      border-radius: 5px;
+    }
+  }
+}
