@@ -9,8 +9,8 @@
 
   &__content {
     display: flex;
-    height: 100%;
     padding: 0 55px;
+    gap: 60px;
   }
 
   &-text {
@@ -36,7 +36,6 @@
     flex-direction: column;
     justify-content: center;
     min-width: 500px;
-    margin-left: 60px;
     gap: 10px;
 
     &__input {
