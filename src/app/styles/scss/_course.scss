@@ -39,14 +39,15 @@
     gap: 10px;
 
     &__input {
+      font-size: 18px;
       background-color: #F6F6F6;
       color: #282944ed;
-      padding: 20px;
+      padding: 19px 20px;
       border-radius: 5px;
     }
 
     &__btn {
-      padding: 19px;
+      padding: 19px 20px;
     }
   }
 }
