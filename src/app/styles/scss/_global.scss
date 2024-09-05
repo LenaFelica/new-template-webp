@@ -77,6 +77,15 @@ section {
   }
 }
 
+.btn--dark {
+  background-color: #141024;
+
+  &:hover {
+    background-color: #fff;
+    color: #141024b3;
+  }
+}
+
 
 @media (max-width: 1024px) {
   .container {
