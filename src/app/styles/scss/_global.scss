@@ -75,7 +75,7 @@ section {
   transition: background-color 0.3s ease;
 
   &:hover{
-    background-color: $button-hover-primary;
+    background-color: $button-color-primary-hover;
   }
 }
 
@@ -83,11 +83,10 @@ section {
   background-color: $bg-color-primary;
 
   &:hover {
-    background-color: $button-hover-secondary;
+    background-color: $button-color-secondary-hover;
     color: $text-color-primary-70;
   }
 }
-
 
 @media (max-width: 1024px) {
   .container {
