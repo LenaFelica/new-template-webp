@@ -1,6 +1,8 @@
+@import './_variables';
+
 .header {
-  background: #141024;
-  color: #fff;
+  background: $bg-color-primary;
+  color: $text-color-secondary;
   padding: 30px 0;
   text-align: center;
 

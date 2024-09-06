@@ -1,3 +1,5 @@
+@import './_variables';
+
 .package {
   &-title {
     font-size: 50px;
@@ -18,7 +20,7 @@
     flex-direction: column;
     text-align: center;
     flex-basis: 360px;
-    border: 2px solid #dddce0;
+    border: 2px solid $border-color;
     border-radius: 20px;
     padding: 40px;
     transition:
@@ -28,14 +30,14 @@
       color 0.2s ease;
 
     &:hover {
-      background-color: #141024;
-      border: 2px solid #141024;
-      color: #fff;
+      background-color: $bg-color-primary;
+      border: 2px solid $border-color-hover;
+      color: $text-color-secondary;
       transform: scale(1.1);
 
       :before,
       :after {
-        background-color: #fff;
+        background-color: $bg-color-white;
       }
     }
 
@@ -56,7 +58,7 @@
         position: absolute;
         width: 19px;
         height: 3px;
-        background-color: #141024;
+        background-color: $bg-color-primary;
       }
 
       &::before {

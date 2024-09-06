@@ -1,10 +1,12 @@
+@import './_variables';
+
 .course {
-  background-color: #D52027;
+  background-color: $bg-color-tertiary;
   background-image: url(/src/shared/img/percent.svg);
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: contain;
-  color: #fff;
+  color: $text-color-secondary;
   padding: 87px 0;
 
   &__content {
@@ -40,8 +42,8 @@
 
     &__input {
       font-size: 18px;
-      background-color: #F6F6F6;
-      color: #282944ed;
+      background-color: $input-bg-color;
+      color: $input-text-color;
       padding: 19px 20px;
       border-radius: 5px;
     }
