@@ -1,3 +1,5 @@
+@import './_variables';
+
 .about {
   padding: 130px 0;
 
@@ -25,12 +27,12 @@
   &__item-number {
     font-size: 70px;
     font-weight: 600;
-    color: #D52027;
+    color: $text-color-tertiary;
     white-space: nowrap;
   }
 
   &__item-text {
     font-size: 18px;
-    color: #141024b3;
+    color: $text-color-primary-70;
   }
 }

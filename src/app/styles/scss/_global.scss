@@ -1,3 +1,5 @@
+@import './_variables';
+
 *,
 *:before,
 *:after {
@@ -67,22 +69,22 @@ section {
   padding: 25px 54px;
   cursor: pointer;
   font-size: 18px;
-  background-color: #D52027;
+  background-color: $bg-color-tertiary;
   border-radius: 5px;
-  color: #fff;
+  color: $text-color-secondary;
   transition: background-color 0.3s ease;
 
   &:hover{
-    background-color: #ac0c12;
+    background-color: $button-hover-primary;
   }
 }
 
 .btn--dark {
-  background-color: #141024;
+  background-color: $bg-color-primary;
 
   &:hover {
-    background-color: #fff;
-    color: #141024b3;
+    background-color: $button-hover-secondary;
+    color: $text-color-primary-70;
   }
 }
 

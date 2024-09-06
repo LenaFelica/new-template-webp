@@ -1,3 +1,5 @@
+@import './_variables';
+
 .teachers {
   padding-bottom: 0;
 
@@ -34,12 +36,13 @@
     &__desc {
       font-size: 18px;
       margin-top: 10px;
+      color: $text-color-primary-70;
     }
 
     &__btn {
       font-size: 18px;
       margin-top: 20px;
-      color: #D52027;
+      color: $text-color-tertiary;
     }
   }
 
@@ -57,7 +60,7 @@
       width: 360px;
       height: 5px;
       border-radius: 40px;
-      background: #ececed;
+      background: $scroll-bg-color;
     }
 
     &__thumb {
@@ -65,7 +68,7 @@
       width: 260px;
       height: 5px;
       border-radius: 40px;
-      background: #141024;
+      background: $scroll-thumb-color;
     }
   }
 }

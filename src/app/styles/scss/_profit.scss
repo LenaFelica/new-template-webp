@@ -1,5 +1,7 @@
+@import './_variables';
+
 .profit {
-  background-color: #F9F9F9;
+  background-color: $bg-color-secondary;
   padding: 100px 0;
 
   &__title {
@@ -26,11 +28,10 @@
     font-weight: 600;
   }
 
-
   &__text {
     font-size: 18px;
     margin-top: 20px;
-    color: #141024b3;
+    color: $text-color-primary-70;
   }
 }
 

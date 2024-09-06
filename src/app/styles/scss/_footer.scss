@@ -1,6 +1,8 @@
+@import './_variables';
+
 .footer {
-  background: #141024;
-  color: #fff;
+  background: $bg-color-primary;
+  color: $text-color-secondary;
   padding: 40px 0;
 
   &__content {
@@ -11,7 +13,7 @@
 
   &__copy {
     font-size: 16px;
-    color: #ffffffde;
+    color: $text-color-secondary-70;
     margin-top: 5px;
   }
 }

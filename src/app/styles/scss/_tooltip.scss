@@ -1,3 +1,4 @@
+@import './_variables';
 
 .tooltip {
   display: inline-flex;
@@ -13,7 +14,7 @@
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background-color: #e5e5e5;
+    background-color: $icon-bg-color;
   }
 
   &__text {
@@ -21,17 +22,17 @@
     font-size: 16px;
     font-weight: 400;
     bottom: 100%;
-    background-color: #fff;
+    background-color: $bg-color-white;
     padding: 15px 20px;
     width: 255px;
     height: 55px;
     border-radius: 10px;
-    color: #141024;
-    box-shadow: 0px 2px 8px 0px #e8e7e9;
+    color: $text-color-primary;
+    box-shadow: 0px 2px 8px 0px $shadow-tooltip-box;
     display: none;
   }
   &:hover .tooltip__text {
-    color: #141024b3;
+    color: $text-color-primary-70;
     display: block;
   }
 }
