@@ -64,11 +64,11 @@
     }
 
     &__thumb {
-      cursor: pointer;
       width: 260px;
       height: 5px;
       border-radius: 40px;
       background: $scroll-thumb-color;
+      cursor: grab;
     }
   }
 }
