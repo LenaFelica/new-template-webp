@@ -1,9 +1,5 @@
 const slider = document.querySelector('#slider');
-const allItems = document.querySelectorAll('.teachers-item');
 const btns = document.querySelectorAll('.teachers-controls__btn');
-const leftBtn = document.querySelector('#arrow-left');
-const rightBtn = document.querySelector('#arrow-right');
-const sliderScrollbar = document.querySelector('.teachers-controls')
 const scrollbar = document.querySelector('#scrollbar-move');
 const thumb = document.querySelector('#scrollbar-thumb');
 
@@ -25,43 +21,36 @@ btns.forEach(btn => {
   });
 });
 
-let startX,
-  thumbPosition,
-  isMouseDown = false;
-
 slider.addEventListener('scroll', () => {
-  const positionScrollbarThumb = () => {
     const scrollPosition = slider.scrollLeft;
-    const thumbPositionX =
+    const thumbPosition =
         (scrollPosition / sliderMaxScrollLeft) * (scrollbar.clientWidth - thumb.offsetWidth);
-         thumb.style.left = `${thumbPositionX}px`;
-  };
+         thumb.style.left = `${thumbPosition}px`;
 })
 
-
-const sliderRect = scrollbar.getBoundingClientRect();
-
-thumb.addEventListener('mousedown', function(e){
-  isMouseDown = true;
-  startX = e.clientX;
-  thumb.style.cursor = 'grabbing';
+thumb.addEventListener('mousedown', (e) => {
+  const startX = e.clientX;
   const thumbPosition = thumb.offsetLeft;
-  const maxThumbPosition = sliderRect.width - thumb.offsetWidth;
+  thumb.style.cursor = 'grabbing';
+  
+  const handleMouseMove = (e) => {
+    const deltaX = e.clientX - startX;
+    const newThumbPosition = thumbPosition + deltaX;
+    const maxThumbPosition = scrollbar.getBoundingClientRect().width - thumb.offsetWidth;
+    const boundedPosition = Math.max(0, Math.min(maxThumbPosition, newThumbPosition));
+    const scrollPosition = (boundedPosition / maxThumbPosition) * sliderMaxScrollLeft;
 
-  console.log(startX);
-
-  const onMouseMove = (e) => {
-    const X = e.clientX - startX;
-    const newThumbPosition = thumbPosition - X;
-    const limitedPosition = Math.max(0, Math.min(newThumbPosition, maxThumbPosition));
-    const scrollPosition = (limitedPosition / maxThumbPosition) * sliderMaxScrollLeft;
-    thumb.style.left = `${limitedPosition}px`;
+    thumb.style.left = `${boundedPosition}px`;
     slider.scrollLeft = scrollPosition;
   };
 
+  const handleMouseUp = () => {
+    document.removeEventListener('mousemove', handleMouseMove);
+    document.removeEventListener('mouseup', handleMouseUp);
+    thumb.style.cursor = 'grab';
+  };
 
-  const onMouseUp = () => {
-   document.removeEventListener('mousemove', onMouseMove);
- }
+  document.addEventListener('mousemove', handleMouseMove);
+  document.addEventListener('mouseup', handleMouseUp)
 })
 

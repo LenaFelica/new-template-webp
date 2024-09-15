@@ -57,6 +57,7 @@
     }
 
     &__scrollbar {
+      position: relative;
       width: 360px;
       height: 5px;
       border-radius: 40px;
@@ -64,6 +65,9 @@
     }
 
     &__thumb {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 260px;
       height: 5px;
       border-radius: 40px;
