@@ -1,17 +1,12 @@
 const slider = document.querySelector('#slider');
-const btns = document.querySelectorAll('.teachers-controls__btn');
+const controlButtons = document.querySelectorAll('.teachers-controls__btn');
 const scrollbar = document.querySelector('#scrollbar-move');
 const thumb = document.querySelector('#scrollbar-thumb');
 
-
 let sliderMaxScrollLeft = slider.scrollWidth - slider.clientWidth;
+thumb.style.width = `${(slider.clientWidth / slider.scrollWidth) * 100}%`;
 
-const resizeScrollbarThumb = () => {
-  thumb.style.width = `${(slider.clientWidth / slider.scrollWidth) * 100}%`;
-}
-resizeScrollbarThumb();
-
-btns.forEach(btn => {
+controlButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     const controls = btn.id === 'arrow-left' ? -1 : 1;
     slider.scrollBy ({
@@ -32,7 +27,7 @@ thumb.addEventListener('mousedown', (e) => {
   const startX = e.clientX;
   const thumbPosition = thumb.offsetLeft;
   thumb.style.cursor = 'grabbing';
-  
+
   const handleMouseMove = (e) => {
     const deltaX = e.clientX - startX;
     const newThumbPosition = thumbPosition + deltaX;
