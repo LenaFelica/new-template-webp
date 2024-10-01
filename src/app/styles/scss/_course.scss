@@ -48,6 +48,14 @@
       border-radius: 5px;
     }
 
+    &__input:focus{
+      outline: 2px solid black;
+    }
+
+    &__input.error {
+      border: 2px solid black;
+    }
+
     &__btn {
       padding: 19px 20px;
     }
