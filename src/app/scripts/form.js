@@ -132,39 +132,3 @@ form.addEventListener('submit', (e) => {
   checkFormValidity();
 });
 
-  const maskPhone = document.querySelectorAll("[data-mask]");
-  for (let i = 0; i < maskPhone.length; i++) {
-    maskPhone[i].addEventListener('input', maskInput);
-  }
-  function maskInput() {
-    let input = this;
-    let mask = input.dataset.mask;
-    let value = input.value;
-    let literalPattern = /[0\*]/;
-    let numberPattern = /[0-9]/;
-    let newValue = "";
-    try {
-      let maskLength = mask.length;
-      let valueIndex = 0;
-      let maskIndex = 0;
-
-      for (; maskIndex < maskLength;) {
-        if (maskIndex >= value.length) break;
-
-        if (mask[maskIndex] === "0" && value[valueIndex].match(numberPattern) === null) break;
-
-        while (mask[maskIndex].match(literalPattern) === null) {
-          if (value[valueIndex] === mask[maskIndex]) break;
-          newValue += mask[maskIndex++];
-        }
-        newValue += value[valueIndex++];
-        maskIndex++;
-      }
-
-      input.value = newValue;
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
-
