@@ -44,16 +44,14 @@
       font-size: 18px;
       background-color: $input-bg-color;
       color: $input-text-color;
-      padding: 19px 20px;
+      padding: 18px 19px;
       border-radius: 5px;
-    }
-
-    &__input:focus{
-      outline: 2px solid black;
+      border: 1px solid #fff;
+      box-sizing: border-box;
     }
 
     &__input.error {
-      border: 2px solid black;
+      border-color: $border-color-error;
     }
 
     &__btn {

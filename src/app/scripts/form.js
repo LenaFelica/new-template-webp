@@ -3,8 +3,8 @@ const inputName = document.querySelector('#name')
 const inputPhone = document.querySelector('#phone');
 const inputEmail = document.querySelector('#email');
 
-const regexName = new RegExp(/^[a-zA-Z0-9]+$/);
-const regexPhone = new RegExp(/^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/gm);
+const regexName = new RegExp(/^[\u0400-\u04FF]{2,}$/);
+const regexPhone = new RegExp(/^((\+7|\+8|7|8)*(9)+([0-9]){9})$/gm);
 const regexEmail = new RegExp(/^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/gm);
 
 let formData = {
@@ -113,11 +113,11 @@ function checkFormValidity() {
   checkPhoneValidity();
   checkEmailValidity();
 
-const formNativeValidity = form.checkValidity();
+const isFormValid = form.checkValidity();
+const invalidInputsCount = Object.values(formData).filter((value) =>
+  !value.isValid).length;
 
-const isAllInputsValid = Object.values(formData).filter((value) => !value.isValid).length;
-
-if(formNativeValidity && Boolean(!isAllInputsValid)) {
+if(isFormValid && invalidInputsCount === 0) {
   console.log({
     name: formData.name.value,
     phone: formData.phone.value,
