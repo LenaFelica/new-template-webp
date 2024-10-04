@@ -196,10 +196,10 @@
               <h2 class="course-text__title">Запишитесь на курс со скидкой 10%</h2>
               <p class="course-text__desc">Акция действительна до 10 марта 2022 года</p>
             </div>
-            <form action="" class="course-form">
-              <input type="text" name="name" class="course-form__input" placeholder="Имя" />
-              <input type="tel" name="tel" class="course-form__input" placeholder="Телефон" />
-              <input type="email" name="email" class="course-form__input" placeholder="E-mail" />
+            <form action="" class="course-form" id="add-form" autocomplete="off">
+              <input class="course-form__input" id="name" required minlength="2" type="text" name="name" placeholder="Имя" autocomplete="new-password"/>
+              <input class="course-form__input" id="phone" required minlength="11" maxlength="11" type="tel" name="phone" placeholder="Телефон" autocomplete="new-password"/>
+              <input class="course-form__input" id="email" required type="email" name="email" placeholder="E-mail" autocomplete="new-password"/>
               <button type="submit" class="btn btn--dark course-form__btn">Оформить заявку</button>
             </form>
           </div>
