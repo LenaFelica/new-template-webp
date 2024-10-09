@@ -6,3 +6,4 @@ import './index.scss'
 // here you can init react or vue
 import './scripts/slider.js';
 import './scripts/form.js';
+import './scripts/modal.js';
