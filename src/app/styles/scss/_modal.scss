@@ -1,0 +1,177 @@
+@import './_variables';
+
+.modal__close-btn {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  width: auto;
+  height: auto;
+  font-size: 18px;
+  line-height: 160%;
+  color: $text-color-primary-70;
+
+  &:hover {
+    color: $button-color-primary;
+  }
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 40px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 111;
+  width: 100%;
+  height: 100%;
+  background-color: $bg-color-modal-70;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .4s, visibility .4s;
+
+  &__content {
+    position: relative;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 20px;
+    text-align: left;
+    padding: 40px;
+    max-height: 90vh;
+    width: min(95%, 940px);
+    height: 770px;
+    transform: scale(0);
+    transition: transform .5s;
+  }
+
+  &__top {
+    gap: 40px;
+    display: flex;
+  }
+
+  &__img {
+    width: 160px;
+    height: auto;
+    max-width: 100%;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    color: $text-color-primary;
+  }
+
+  &__info-desc {
+    margin-top: 10px;
+    font-size: 18px;
+    color: $text-color-primary-70;
+  }
+
+  &__info-socials {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  &__bottom {
+    margin-top: 40px;
+  }
+
+  &__bottom hr {
+    margin-top: 20px;
+    height: 2px;
+    background-color: $hr-color;
+  }
+
+  &-tabs__menu {
+    font-size: 20px;
+    display: flex;
+    width: 100%;
+    column-gap: 180px;
+    overflow: auto;
+    position: relative;
+  }
+
+  &-tabs__content {
+    position: relative;
+    max-height: 340px;
+    overflow-y: scroll;
+  }
+
+  &-tabs__panel {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+  }
+
+  &-tabs__panel.active {
+    display: block;
+  }
+
+  &-tabs__btn {
+    color: $text-color-primary-70;
+    transition: color 0.1s ease;
+
+    &:hover {
+      color: $text-color-primary;
+    }
+  }
+
+  &-tabs__btn.active {
+    color: $button-color-primary;
+  }
+
+  &-tabs__info {
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  &-tabs__title {
+    font-size: 24px;
+    font-weight: 600;
+    color: $text-color-primary;
+    margin-top: 40px;
+  }
+
+  &__list {
+    margin-top: 20px;
+  }
+
+  &-tabs__desc {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+}
+
+.tabs {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 98%;
+    height: 25px;
+    bottom: 0;
+    left: 0;
+    background-image: $bg-image-tabs;
+  }
+}
+
+.modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal.visible {
+  display: block;
+}
+
+.modal.open .modal__content {
+  transform: scale(1);
+}
+
+
