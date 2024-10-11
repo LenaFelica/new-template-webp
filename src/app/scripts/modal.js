@@ -1,47 +1,65 @@
-const openModal = document.querySelectorAll('.teachers-item__btn')
-const closeModalBtn = document.querySelector('.modal__close-btn');
-const myModal = document.querySelector('.modal');
-const modalContent = document.querySelector('.modal__content');
-
+const openModalBtns = document.querySelectorAll('.teachers-item__btn')
+const closeModalBtn = document.querySelector('.close-modal-btn');
+const modal = document.querySelector('.modal');
+const tabButton = document.querySelectorAll('.tabs-menu__btn');
 const tabContent = document.querySelectorAll('.tabcontent');
-const tabButton = document.querySelectorAll('.modal-tabs__btn');
 
-let i;
-
-for (let i = 0; i < openModal.length; i++) {
-  openModal[i].addEventListener('click', function() {
-    myModal.classList.add('open')
-  })
+const openModal = () => {
+  modal.classList.add('open');
 };
 
-closeModalBtn.addEventListener('click', function() {
-  myModal.classList.remove('open');
-});
+const closeModal = () =>  {
+  modal.classList.remove('open');
+};
 
-window.addEventListener('keydown', (e) => {
-  if(e.key === 'Escape') {
-    myModal.classList.remove('open');
+const closeModalOnBackdropClick = (event) => {
+   if(event.target !== modal) {
+    return;
+   }
+   closeModal();
+};
+
+for (let i = 0; i < openModalBtns.length; i++) {
+  openModalBtns[i].addEventListener('click', openModal)
+};
+
+closeModalBtn.addEventListener('click', closeModal);
+
+window.addEventListener('keydown', (event) => {
+  if(event.key !== 'Escape' || !modal.classList.contains('open')) {
+    return;
   }
+  closeModal();
 });
 
-document.querySelector('#my-modal .modal__content').addEventListener('click', e => {
-  e._isClickWithInModal = true;
+modal.addEventListener('click', closeModalOnBackdropClick);
+
+// tabButton.forEach((btn, i) => {
+//   btn.addEventListener('click', () => {
+//     tabButton.forEach((btn) => {
+//       btn.classList.remove('active')
+//     });
+//     btn.classList.add('active');
+
+//     tabContent.forEach(tabcontent => tabcontent.classList.remove('active'));
+//     tabContent[i].classList.add('active')
+//     })
+// })
+
+//* data-atributes
+tabButton.forEach((btn) => {
+  btn.addEventListener('click', function() {
+      const id = this.getAttribute('data-tab');
+      console.log(this)
+      const content = document.querySelector(`.tabcontent[data-tab="${id}"]`);
+      const activeTab = document.querySelector('.tabs-menu__btn.active');
+      const activeContent = document.querySelector('.tabcontent.active');
+
+      activeTab.classList.remove('active');
+      btn.classList.add('active');
+
+      activeContent.classList.remove('active');
+      content.classList.add('active');
+   });
 });
-
-myModal.addEventListener('click', e => {
-  if(e._isClickWithInModal) return;
-  e.currentTarget.classList.remove('open')
-});
-
-
-
-tabButton.forEach((btn, i) => {
-  btn.addEventListener('click', (e) => {
-    tabButton.forEach(btn => {btn.classList.remove('active')});
-    btn.classList.add('active');
-
-    tabContent.forEach(tabcontent => {tabcontent.classList.remove('active')});
-    tabContent[i].classList.add('active')
-    })
-})
 
