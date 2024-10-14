@@ -1,65 +1,85 @@
 const openModalBtns = document.querySelectorAll('.teachers-item__btn')
 const closeModalBtn = document.querySelector('.close-modal-btn');
 const modal = document.querySelector('.modal');
-const tabButton = document.querySelectorAll('.tabs-menu__btn');
-const tabContent = document.querySelectorAll('.tabcontent');
+const tabButtons = document.querySelectorAll('.tabs-menu__btn');
+const contentTabs = document.querySelectorAll('.tabcontent');
 
 const openModal = () => {
   modal.classList.add('open');
 };
 
-const closeModal = () =>  {
-  modal.classList.remove('open');
-};
-
-const closeModalOnBackdropClick = (event) => {
-   if(event.target !== modal) {
-    return;
-   }
-   closeModal();
-};
-
 for (let i = 0; i < openModalBtns.length; i++) {
-  openModalBtns[i].addEventListener('click', openModal)
+  openModalBtns[i].addEventListener('click', openModal);
+};
+
+const closeModal = () => {
+  modal.classList.remove('open');
 };
 
 closeModalBtn.addEventListener('click', closeModal);
 
+const closeModalOnBackdropClick = (event) => {
+  if (event.target !== modal) {
+   return;
+  }
+
+  closeModal();
+};
+
 window.addEventListener('keydown', (event) => {
-  if(event.key !== 'Escape' || !modal.classList.contains('open')) {
+  if (event.key !== 'Escape' || !modal.classList.contains('open')) {
     return;
   }
+
   closeModal();
 });
 
 modal.addEventListener('click', closeModalOnBackdropClick);
 
-// tabButton.forEach((btn, i) => {
-//   btn.addEventListener('click', () => {
-//     tabButton.forEach((btn) => {
-//       btn.classList.remove('active')
-//     });
-//     btn.classList.add('active');
 
-//     tabContent.forEach(tabcontent => tabcontent.classList.remove('active'));
-//     tabContent[i].classList.add('active')
-//     })
-// })
+// const onTabBtnClick = (buttonId) => {
+//   contentTabs.forEach((tab) => {
+//     tab.classList.remove('active');
+//     const activeTab = document.querySelector(`.tabcontent[data-tab="${buttonId}"]`);
+//     activeTab.classList.add('active');
+//   })
+// }
 
-//* data-atributes
-tabButton.forEach((btn) => {
-  btn.addEventListener('click', function() {
-      const id = this.getAttribute('data-tab');
-      console.log(this)
-      const content = document.querySelector(`.tabcontent[data-tab="${id}"]`);
-      const activeTab = document.querySelector('.tabs-menu__btn.active');
-      const activeContent = document.querySelector('.tabcontent.active');
+// tabButtons.forEach((tabBtn) => {
+//   tabBtn.addEventListener('click', (event) => {
+//     const activeTabBtn = document.querySelector('.tabs-menu__btn.active')
+//     activeTabBtn.classList.remove('active');
+//     tabBtn.classList.add('active');
+//     onTabBtnClick(event.target.getAttribute('data-tab'));
+//   })
+// });
 
-      activeTab.classList.remove('active');
-      btn.classList.add('active');
 
-      activeContent.classList.remove('active');
-      content.classList.add('active');
-   });
-});
+const setActiveTabContent = (tabContent, id) => {
+  tabContent.classList.remove('active');
+  const activeTabContent = document.querySelector(`.tabcontent[data-tab="${id}"]`);
+  activeTabContent.classList.add('active');
+}
+
+const setActiveTabBtn = (tabButton, id) => {
+  tabButton.classList.remove('active');
+  const activeTabBtn = document.querySelector(`.tabs-menu__btn[data-tab="${id}"]`);
+  activeTabBtn.classList.add('active');
+}
+
+const onTabBtnClick = (event) => {
+  const dataId = event.target.getAttribute('data-tab');
+
+  contentTabs.forEach((tabContent) => {
+    setActiveTabContent(tabContent, dataId);
+  });
+
+  tabButtons.forEach((tabButton) => {
+    setActiveTabBtn(tabButton, dataId)
+  });
+}
+
+tabButtons.forEach((tabButton) => {
+  tabButton.addEventListener('click', onTabBtnClick);
+})
 
