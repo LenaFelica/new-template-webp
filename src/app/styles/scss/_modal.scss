@@ -1,0 +1,146 @@
+@import "./_variables";
+
+.modal {
+  display: none;
+
+  position: fixed;
+  column-gap: 40px;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background-color: $bg-color-modal-70;
+
+  &.open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-content {
+    position: relative;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 20px;
+    text-align: left;
+    padding: 40px;
+    max-height: 90vh;
+    width: min(95%, 940px);
+    height: 770px;
+
+    .close-modal-btn {
+      position: absolute;
+      right: 40px;
+      top: 40px;
+      width: auto;
+      height: auto;
+      font-size: 18px;
+      line-height: 160%;
+      color: $text-color-primary-70;
+
+      &:hover {
+        color: $button-color-primary;
+      }
+    }
+
+    .content-top {
+      gap: 40px;
+      display: flex;
+
+      &__img {
+        width: 160px;
+        height: auto;
+        max-width: 100%;
+      }
+
+      &__info {
+        &-title {
+          font-size: 24px;
+          font-weight: 600;
+          color: $text-color-primary;
+        }
+        &-desc {
+          margin-top: 10px;
+          font-size: 18px;
+          color: $text-color-primary-70;
+        }
+        &-socials {
+          display: flex;
+          gap: 10px;
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .content-bottom {
+      margin-top: 40px;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: "";
+        width: 98%;
+        height: 25px;
+        bottom: 0;
+        left: 0;
+        background-image: $bg-image-tabs;
+      }
+
+      .tabs-menu {
+        font-size: 20px;
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        position: relative;
+        border-bottom: 2px solid $hr-color;
+
+        &__btn {
+          color: $text-color-primary-70;
+          transition: color 0.1s ease;
+          padding: 15px 0;
+          width: 100%;
+          display: flex;
+
+          &:hover {
+            color: $text-color-primary;
+          }
+          &.active {
+            color: $button-color-primary;
+          }
+        }
+      }
+
+      &__tabs-content {
+        position: relative;
+        max-height: 340px;
+        overflow-y: scroll;
+        padding-bottom: 25px;
+
+        .tabcontent {
+          display: none;
+          padding: 6px 12px;
+          border-top: none;
+
+          &__info {
+            margin-top: 20px;
+            font-size: 20px;
+            line-height: 32px;
+          }
+
+          &__title {
+            font-size: 24px;
+            font-weight: 600;
+            color: $text-color-primary;
+            margin-top: 40px;
+          }
+          &.active {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
