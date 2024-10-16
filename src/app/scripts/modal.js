@@ -36,25 +36,6 @@ window.addEventListener('keydown', (event) => {
 
 modal.addEventListener('click', closeModalOnBackdropClick);
 
-
-// const onTabBtnClick = (buttonId) => {
-//   contentTabs.forEach((tab) => {
-//     tab.classList.remove('active');
-//     const activeTab = document.querySelector(`.tabcontent[data-tab="${buttonId}"]`);
-//     activeTab.classList.add('active');
-//   })
-// }
-
-// tabButtons.forEach((tabBtn) => {
-//   tabBtn.addEventListener('click', (event) => {
-//     const activeTabBtn = document.querySelector('.tabs-menu__btn.active')
-//     activeTabBtn.classList.remove('active');
-//     tabBtn.classList.add('active');
-//     onTabBtnClick(event.target.getAttribute('data-tab'));
-//   })
-// });
-
-
 const setActiveTabContent = (tabContent, id) => {
   tabContent.classList.remove('active');
   const activeTabContent = document.querySelector(`.tabcontent[data-tab="${id}"]`);
