@@ -16,8 +16,8 @@ html {
   line-height: 1.6;
 }
 
-body {
-  height: 100%;
+body.unscroll {
+  overflow: hidden;
 }
 
 a {
@@ -45,6 +45,7 @@ section {
 
   &-wide {
     max-width: 1720px;
+    padding: 0 15px;
   }
 }
 
@@ -88,27 +89,36 @@ section {
   }
 }
 
-@media (max-width: 1024px) {
-  .container {
-    width: 100%;
+@media (max-width: 1800px) {
+  .container-wide {
     padding: 0 20px;
   }
-  .menu {
-    visibility: hidden;
+}
+
+@media (max-width: 1400px) {
+  section {
+    padding: 90px 0;
   }
-  .tel {
-    visibility: hidden;
+}
+
+@media (max-width: 1200px) {
+  .container-wide {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 20px;
   }
 }
 
 @media (max-width: 768px) {
-  header .container {
-    padding: 0 10px;
-  }
 }
 
 @media (max-width: 425px) {
-  header .container {
+  .container,
+  .container-wide {
     padding: 0 10px;
   }
 }

@@ -1,4 +1,4 @@
-@import './_variables';
+@import "./_variables";
 
 .header {
   background: $bg-color-primary;
@@ -14,23 +14,62 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 15px;
-  }
-}
-
-.menu {
-  &__list {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
   }
 
-  &__link {
-    font-size: 20px;
+  .menu {
+    &__list {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+    }
 
-    &:hover {
-      text-decoration: underline;
+    &__link {
+      font-size: 20px;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
 
+@media (max-width: 1200px) {
+  .header {
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .menu {
+    display: none;
+  }
+  .tel {
+    display: none;
+  }
+}
+
+@media (max-width: 990px) {
+  .header {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    .container {
+      padding: 0 10px;
+    }
+    &__logo {
+      font-size: 28px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    padding: 10px;
+    &__logo {
+      font-size: 24px;
+    }
+  }
+}
