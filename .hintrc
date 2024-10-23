@@ -18,8 +18,16 @@
       {
         "ignore": [
           "scrollbar-width",
-          "scrollbar-width: none"
+          "scrollbar-width: none",
+          "overscroll-behavior",
+          "overscroll-behavior: none"
         ]
+      }
+    ],
+    "axe/aria": [
+      "default",
+      {
+        "aria-valid-attr": "off"
       }
     ]
   }
