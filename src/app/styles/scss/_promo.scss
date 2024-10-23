@@ -47,7 +47,7 @@
 
 @media (max-width: 1024px) {
   .promo {
-    height: calc(100dvh - 68px);
+    height: calc(100dvh - 78px);
 
     &__content {
       flex-direction: column;
@@ -63,7 +63,7 @@
 
     &__title,
     &__description {
-      text-align: center;
+    text-align: center;
     }
 
     &__img {
