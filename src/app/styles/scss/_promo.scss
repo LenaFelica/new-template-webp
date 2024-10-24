@@ -71,7 +71,7 @@
       top: unset;
       bottom: 50px;
       transform: translateX(-50%);
-      width: 380px;
+      width: 450px;
     }
 
     &__btn {
@@ -92,6 +92,10 @@
 
     &__description {
       font-size: 16px;
+    }
+
+    &__img {
+      width: 380px;
     }
   }
 }
