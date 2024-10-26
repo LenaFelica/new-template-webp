@@ -1,11 +1,25 @@
 const openBurgerBtn = document.querySelector('#open-burger-btn');
 const closeBurgerBtn = document.querySelector('#close-burger-btn');
 const mobileMenu = document.querySelector('#mobile-menu');
-const mobileBtns = document.querySelector('.mobile-buttons')
+const mobileBtns = document.querySelector('.mobile-buttons');
+const menuLinks = document.querySelectorAll('.nav-list__item');
+const body = document.querySelector('body');
 
-const openMenuMobile = () => {
+const openMobileMenu = () => {
   mobileMenu.classList.add('open');
-  // mobileBtns.classList.remove('active')
-}
+  body.classList.add('unscroll');
+};
 
-openBurgerBtn.addEventListener('click', openMenuMobile)
+const closeMobileMenu = () => {
+  mobileMenu.classList.remove('open');
+  body.classList.remove('unscroll');
+};
+
+menuLinks.forEach((link) => {
+  link.addEventListener('click', closeMobileMenu)
+})
+
+openBurgerBtn.addEventListener('click', openMobileMenu);
+
+closeBurgerBtn.addEventListener('click', closeMobileMenu);
+
