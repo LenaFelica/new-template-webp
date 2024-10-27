@@ -1,0 +1,66 @@
+@import './_variables';
+
+.mobile-menu {
+  display: none;
+  z-index: 1000;
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+    padding: 15px;
+    background-color: $bg-color-primary;
+    color: $text-color-secondary;
+
+    .nav-list {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+
+      &__item {
+        position: relative;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 600;
+        line-height: 48px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    width: 44px;
+    height: 44px;
+
+    &-icon {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .mobile-menu {
+    &.open {
+      display: flex;
+    }
+  }
+}

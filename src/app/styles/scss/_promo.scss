@@ -1,4 +1,4 @@
-@import './_variables';
+@import "./_variables";
 
 .promo {
   position: relative;
@@ -35,12 +35,69 @@
   &__btn {
     margin-top: 50px;
   }
+
+  &__img {
+    position: absolute;
+    left: 48%;
+    top: 54px;
+    width: 783px;
+    height: auto;
+  }
 }
 
-.promo__img {
-  position: absolute;
-  left: 48%;
-  top: 54px;
-  width: 783px;
-  height: auto;
+@media (max-width: 1024px) {
+  .promo {
+    height: calc(100dvh - 78px);
+
+    &__content {
+      flex-direction: column;
+      padding: 45px 0 40px;
+      height: 100%;
+    }
+
+    &__text {
+      align-items: center;
+      margin-top: 0;
+      height: 100%;
+    }
+
+    &__title,
+    &__description {
+      text-align: center;
+    }
+
+    &__img {
+      left: 50%;
+      top: unset;
+      bottom: 50px;
+      transform: translateX(-50%);
+      width: 450px;
+    }
+
+    &__btn {
+      margin-top: auto;
+      z-index: 1;
+    }
+  }
 }
+
+@media (max-width: 768px) {
+  .promo {
+    max-height: calc(100vw * 1.1);
+    min-height: 650px;
+
+    &__title {
+      font-size: 30px;
+    }
+
+    &__description {
+      font-size: 16px;
+    }
+
+    &__img {
+      width: 380px;
+    }
+  }
+}
+
+
