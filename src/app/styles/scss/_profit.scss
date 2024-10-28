@@ -35,14 +35,12 @@
   }
 }
 
-
 @media (max-width: 1024px) {
   .profit {
     padding: 50px 0;
 
     &__title {
       text-align: center;
-      font-size: 30px;
     }
 
     &__items {
@@ -54,13 +52,50 @@
       flex-basis: 300px;
     }
 
-    &__subtitle {
-      font-size: 20px;
-    }
-
     &__text {
       margin-top: 10px;
     }
   }
 }
 
+@media (max-width: 768px) {
+  .profit {
+    &__title {
+      font-size: 40px;
+    }
+
+    &__items {
+      flex-direction: column;
+      text-align: center;
+      margin: 20px;
+      gap: 30px;
+    }
+
+    &__item {
+      flex-basis: 50px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .profit {
+    padding: 40px 0;
+    
+    &__title {
+      font-size: 30px;
+    }
+
+    &__subtitle {
+      font-size: 20px;
+      line-height: 32px;
+    }
+
+    &__text {
+      font-size: 16px;
+    }
+
+    &__items {
+      margin: 10px;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-@import './_variables';
+@import "./_variables";
 
 .course {
   background-color: $bg-color-tertiary;
@@ -56,6 +56,67 @@
 
     &__btn {
       padding: 19px 20px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .course {
+    padding: 40px 0;
+
+    &__content {
+      padding: 0 30px;
+    }
+
+    &-form {
+      min-width: 350px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .course {
+    &__content {
+      flex-direction: column;
+      gap: 10px;
+      padding: 0 10px;
+    }
+
+    &-text {
+      align-items: center;
+      margin-top: 20px;
+
+      &__title {
+        font-size: 30px;
+      }
+
+      &__desc {
+        font-size: 16px;
+      }
+    }
+
+    &-form {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .course {
+    &__content {
+      padding: 0;
+    }
+
+    &-text {
+      text-align: center;
+
+      &__desc {
+        padding: 0 35px;
+      }
+    }
+
+    &-form {
+      min-width: 100%;
     }
   }
 }

@@ -1,4 +1,4 @@
-@import './_variables';
+@import "./_variables";
 
 .package {
   &-title {
@@ -89,6 +89,67 @@
 
     &__btn {
       margin-top: auto;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .package {
+    padding: 60px 10px;
+
+    &-title {
+      text-align: center;
+    }
+
+    &-item {
+      flex-basis: 450px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .package {
+    &-list {
+      margin: 40px 10px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .package {
+    padding: 40px 0;
+
+    &-title {
+      font-size: 30px;
+    }
+
+    &-item {
+      min-height: 100%;
+      padding: 30px 20px;
+      flex-basis: 350px;
+
+      &__desc {
+        font-size: 16px;
+      }
+
+      &__btn {
+        font-size: 16px;
+        padding: 20px 50px;
+      }
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  .package {
+    &-list {
+      margin: 40px 0;
+    }
+
+    &-item {
+      &:hover {
+        margin: 0 10px;
+      }
     }
   }
 }
