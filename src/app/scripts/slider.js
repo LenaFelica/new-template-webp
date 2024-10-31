@@ -6,6 +6,11 @@ const thumb = document.querySelector('#scrollbar-thumb');
 let sliderMaxScrollLeft = slider.scrollWidth - slider.clientWidth;
 thumb.style.width = `${(slider.clientWidth / slider.scrollWidth) * 100}%`;
 
+window.addEventListener('resize', () => {
+  let sliderMaxScrollLeft = slider.scrollWidth - slider.clientWidth;
+  thumb.style.width = `${(slider.clientWidth / slider.scrollWidth) * 100}%`;
+});
+
 controlButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     const controls = btn.id === 'arrow-left' ? -1 : 1;
@@ -46,6 +51,8 @@ thumb.addEventListener('mousedown', (e) => {
   };
 
   document.addEventListener('mousemove', handleMouseMove);
-  document.addEventListener('mouseup', handleMouseUp)
+  document.addEventListener('mouseup', handleMouseUp);
 })
+
+
 

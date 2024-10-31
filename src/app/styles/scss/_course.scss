@@ -66,10 +66,15 @@
 
     &__content {
       padding: 0 30px;
+      gap: 20px;
+    }
+
+    &-text {
+      margin-top: 0;
     }
 
     &-form {
-      min-width: 350px;
+      min-width: 450px;
     }
   }
 }
@@ -78,12 +83,14 @@
   .course {
     &__content {
       flex-direction: column;
+      align-items: center;
       gap: 10px;
       padding: 0 10px;
     }
 
     &-text {
       align-items: center;
+      text-align: center;
       margin-top: 20px;
 
       &__title {
@@ -97,26 +104,16 @@
 
     &-form {
       margin-top: 20px;
+      max-width: 500px;
+      width: 100%;
     }
   }
 }
 
 @media (max-width: 576px) {
   .course {
-    &__content {
-      padding: 0;
-    }
-
-    &-text {
-      text-align: center;
-
-      &__desc {
-        padding: 0 35px;
-      }
-    }
-
     &-form {
-      min-width: 100%;
+      min-width: 300px;
     }
   }
 }

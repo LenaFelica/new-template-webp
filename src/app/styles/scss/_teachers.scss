@@ -27,6 +27,10 @@
     flex-shrink: 0;
     height: 100%;
 
+    &__img {
+      object-position: top;
+    }
+
     &__name {
       font-size: 24px;
       font-weight: 600;
@@ -89,14 +93,6 @@
 
 @media (max-width: 768px) {
   .teachers {
-    &-list {
-      margin-top: 40px;
-    }
-  }
-}
-
-@media (max-width: 576px) {
-  .teachers {
     padding-top: 40px;
 
     &-title {
@@ -105,10 +101,15 @@
 
     &-list {
       gap: 30px;
+      margin-top: 40px;
+      padding: 0 10px;
+      width: calc(100% + 20px);
+      margin-left: -10px;
     }
 
     &-item {
-      flex-basis: 200px;
+      height: auto;
+      flex-basis: 300px;
 
       &__name {
         font-size: 20px;
@@ -121,12 +122,12 @@
 
       &__btn {
         font-size: 16px;
-        margin-top: 10px;
       }
     }
 
     &-controls {
       margin: 30px 0;
+      max-width: 100%;
 
       &__nav {
         display: none;
@@ -134,3 +135,4 @@
     }
   }
 }
+
