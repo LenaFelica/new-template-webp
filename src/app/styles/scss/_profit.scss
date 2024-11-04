@@ -35,14 +35,6 @@
   }
 }
 
-@media (max-width: 1200px) {
-  .profit {
-    &__items {
-      gap: 120px
-    }
-  }
-}
-
 @media (max-width: 1024px) {
   .profit {
     padding: 50px 0;
@@ -61,7 +53,7 @@
 
     &__item {
       max-width: 700px;
-      flex-basis: 100px;
+      flex-basis: unset;
     }
 
     &__text {
@@ -91,4 +83,3 @@
     }
   }
 }
-
