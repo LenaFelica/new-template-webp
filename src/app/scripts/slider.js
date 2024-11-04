@@ -7,7 +7,7 @@ let sliderMaxScrollLeft = slider.scrollWidth - slider.clientWidth;
 thumb.style.width = `${(slider.clientWidth / slider.scrollWidth) * 100}%`;
 
 window.addEventListener('resize', () => {
-  let sliderMaxScrollLeft = slider.scrollWidth - slider.clientWidth;
+  sliderMaxScrollLeft = slider.scrollWidth - slider.clientWidth;
   thumb.style.width = `${(slider.clientWidth / slider.scrollWidth) * 100}%`;
 });
 

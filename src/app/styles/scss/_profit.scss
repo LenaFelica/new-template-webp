@@ -12,7 +12,6 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
     margin-top: 90px;
     gap: 40px;
   }
@@ -20,6 +19,7 @@
   &__item {
     display: flex;
     flex-direction: column;
+    text-align: center;
     flex-basis: 360px;
   }
 
@@ -52,13 +52,15 @@
     }
 
     &__items {
+      display: flex;
       flex-direction: column;
-      text-align: center;
-      margin: 20px;
+      align-items: center;
+      margin-top: 40px;
       gap: 30px;
     }
 
     &__item {
+      max-width: 700px;
       flex-basis: 100px;
     }
 
@@ -71,6 +73,10 @@
 @media (max-width: 768px) {
   .profit {
     padding: 40px 0;
+
+    &__item {
+      max-width: 500px;
+    }
 
     &__title {
       font-size: 30px;

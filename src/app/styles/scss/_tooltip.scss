@@ -37,14 +37,6 @@
   }
 }
 
-@media (max-width: 1024px) {
-  .tooltip {
-    &__text {
-      // left: -70px;
-    }
-  }
-}
-
 @media (max-width: 768px) {
   .tooltip {
     &__text {
