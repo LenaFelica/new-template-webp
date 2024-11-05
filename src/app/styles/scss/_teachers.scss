@@ -1,4 +1,4 @@
-@import './_variables';
+@import "./_variables";
 
 .teachers {
   padding-bottom: 0;
@@ -77,3 +77,60 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .teachers {
+    padding: 60px 0 0px 0;
+
+    &-title {
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .teachers {
+    padding-top: 40px;
+
+    &-title {
+      font-size: 30px;
+    }
+
+    &-list {
+      gap: 30px;
+      margin-top: 40px;
+      padding: 0 10px;
+      width: calc(100% + 20px);
+      margin-left: -10px;
+    }
+
+    &-item {
+      height: auto;
+      flex-basis: 300px;
+
+      &__name {
+        font-size: 20px;
+        margin-top: 10px;
+      }
+
+      &__desc {
+        font-size: 14px;
+      }
+
+      &__btn {
+        font-size: 16px;
+      }
+    }
+
+    &-controls {
+      margin: 30px 0;
+
+      &__scrollbar {
+        width: 100%;
+      }
+
+      &__nav {
+        display: none;
+      }
+    }
+  }
+}

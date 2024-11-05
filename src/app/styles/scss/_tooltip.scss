@@ -36,3 +36,12 @@
     display: block;
   }
 }
+
+@media (max-width: 768px) {
+  .tooltip {
+    &__text {
+      left: -165px;
+      font-size: 14px;
+    }
+  }
+}
