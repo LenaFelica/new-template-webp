@@ -249,6 +249,9 @@
   <div id="my-modal" class="modal">
       <div class="modal-content">
         <button id="close-modal-btn" class="close-modal-btn" aria-label="Закрыть модалку">Закрыть</button>
+        <button class="close-mobile-btn" id="close-mobile-btn">
+          <img class="close-mobile-icon" src="/static/img/icons/close black.svg" alt="">
+        </button>
         <div class="content-top">
           <img class="content-top__img" src="static/img/trainers/ira.jpg" alt="ira">
           <div class="content-top__info">
@@ -264,6 +267,17 @@
             </div>
           </div>
         </div>
+          <div class="select-teachers">
+              <button class="select-teachers__btn" id="open-options">Образование
+                <img class="arrow" src="/static/img/icons/arrow-down.svg" alt="">
+              </button>
+
+              <div class="select-teachers__options">
+                <button class="select-teachers__option active" id="option1" data-value="1">Образование</button>
+                <button class="select-teachers__option" id="option2" data-value="2">Опыт работы</button>
+                <button class="select-teachers__option" id="option3" data-value="3">Награды</button>
+              </div>
+          </div>
         <div class="content-bottom">
           <div class="content-bottom__tabs">
             <div class="tabs-menu">
@@ -272,7 +286,7 @@
               <button class="tabs-menu__btn" data-tab="3">Награды</button>
             </div>
             <div class="content-bottom__tabs-content">
-              <div id="tab1" data-tab="1" class="tabcontent active">
+              <div id="tab1" data-tab="1" data-value="1" class="tabcontent active">
                 <div class="tabcontent__info">
                   <p class="tabcontent__text">Ноябрь 2020 — Февраль 2021</p>
                   <p class="tabcontent__text">Программа дополнительного образования «3D Моделирование»</p>
@@ -289,7 +303,7 @@
                   <p class="tabcontent__text">Форма обучения: Очная</p>
                 </div>
               </div>
-              <div id="tab2" data-tab="2" class="tabcontent">
+              <div id="tab2" data-tab="2" data-value="2" class="tabcontent">
                 <div class="tabcontent__info">
                   <p class="tabcontent__text">2Lorem ipsum dolor sit amet.</p>
                   <p class="tabcontent__text">2Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, accusantium?</p>
@@ -306,7 +320,7 @@
                   <p class="tabcontent__text">Форма обучения: Очная</p>
                 </div>
               </div>
-              <div id="tab3" data-tab="3" class="tabcontent">
+              <div id="tab3" data-tab="3" data-value="3" class="tabcontent">
                 <div class="tabcontent__info">
                   <p class="tabcontent__text">3Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
                   <p class="tabcontent__text">3Lorem ipsum dolor sit amet, consectetur adipisicing.</p>

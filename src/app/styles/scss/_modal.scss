@@ -46,6 +46,19 @@
       }
     }
 
+    .close-mobile-btn {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      border: 1px solid #fff;
+      border-radius: 10px;
+      width: 44px;
+      height: 44px;
+    }
+
     .content-top {
       gap: 40px;
       display: flex;
@@ -121,7 +134,7 @@
 
         .tabcontent {
           display: none;
-          padding: 6px 12px;
+          padding: 6px 0;
           border-top: none;
 
           &__info {
@@ -140,6 +153,129 @@
             display: block;
           }
         }
+      }
+    }
+  }
+}
+
+.select-teachers {
+  position: relative;
+
+  &__btn {
+    display: none;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    cursor: pointer;
+    border: 1px solid #fff;
+    padding: 10px;
+    position: relative;
+    background-color: $bg-color-tertiary;
+    color: $text-color-secondary;
+    text-align: center;
+    font-size: 16px;
+    z-index: 1;
+
+    .arrow {
+      width: 10px;
+      height: 10px;
+      pointer-events: none;
+    }
+  }
+
+  &__options {
+    display: none;
+    position: absolute;
+    top: 74px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__option {
+    display: none;
+    width: 100%;
+    padding: 10px;
+    background-color: $bg-color-tertiary;
+    color: $text-color-secondary;
+    text-align: center;
+    border: 1px solid #fff;
+    border-bottom: 0;
+  }
+}
+
+@media(max-width: 768px) {
+  .modal {
+    &-content {
+      padding: 30px 20px;
+      height: auto;
+
+      .close-modal-btn {
+        display: none;
+      }
+
+      .select-teachers {
+          &__btn {
+            display: block;
+            margin-top: 30px;
+          }
+          &__option {
+            display: block;
+          }
+        }
+
+      .content-top {
+        gap: 20px;
+
+        &__img {
+          max-width: 100%;
+          min-width: 60px;
+          height: auto;
+        }
+
+        &__info {
+          margin-top: 30px;
+
+          &-title {
+            font-size: 16px;
+          }
+
+          &-desc {
+            margin-top: 5px;
+            font-size: 12px;
+          }
+
+          &-socials {
+            gap: 5px;
+            margin-top: 10px;
+          }
+        }
+      }
+
+      .content-bottom {
+        margin-top: 20px;
+
+        .tabs-menu {
+          display: none;
+        }
+
+        &__tabs-content {
+          .tabcontent {
+            padding: 6px 0;
+
+            &__info {
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+
+      .close-mobile-btn {
+        display: flex;
       }
     }
   }
