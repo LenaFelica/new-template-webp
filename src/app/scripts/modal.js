@@ -4,32 +4,26 @@ const modal = document.querySelector('.modal');
 const tabButtons = document.querySelectorAll('.tabs-menu__btn');
 const contentTabs = document.querySelectorAll('.tabcontent');
 
-const teachersSelect = document.querySelector('.select-teachers')
-const openOptionsBtn = document.querySelector('.select-teachers__btn');
-const selectOptions = document.querySelector('.select-teachers__options');
-const openOptionOne = document.querySelectorAll('.select-teachers__option');
-const closeMobileBtn = document.querySelector('.close-mobile-btn');
-
-const openModal = () => {
+const handleModalOpen = () => {
   modal.classList.add('open');
 };
 
-for (let i = 0; i < openModalBtns.length; i++) {
-  openModalBtns[i].addEventListener('click', openModal);
-};
+openModalBtns.forEach((btn) => {
+  btn.addEventListener('click', handleModalOpen);
+});
 
-const closeModal = () => {
+const handleModalClose = () => {
   modal.classList.remove('open');
 };
 
-closeModalBtn.addEventListener('click', closeModal);
+closeModalBtn.addEventListener('click', handleModalClose);
 
-const closeModalOnBackdropClick = (event) => {
+const handleOutsideModalClick = (event) => {
   if (event.target !== modal) {
    return;
   }
 
-  closeModal();
+  handleModalClose();
 };
 
 window.addEventListener('keydown', (event) => {
@@ -37,10 +31,10 @@ window.addEventListener('keydown', (event) => {
     return;
   }
 
-  closeModal();
+  handleModalClose();
 });
 
-modal.addEventListener('click', closeModalOnBackdropClick);
+modal.addEventListener('click', handleOutsideModalClick);
 
 const setActiveTabContent = (tabContent, id) => {
   tabContent.classList.remove('active');
@@ -54,7 +48,7 @@ const setActiveTabBtn = (tabButton, id) => {
   activeTabBtn.classList.add('active');
 }
 
-const onTabBtnClick = (event) => {
+const handleTabBtnClick = (event) => {
   const dataId = event.target.getAttribute('data-tab');
 
   contentTabs.forEach((tabContent) => {
@@ -67,64 +61,62 @@ const onTabBtnClick = (event) => {
 }
 
 tabButtons.forEach((tabButton) => {
-  tabButton.addEventListener('click', onTabBtnClick);
+  tabButton.addEventListener('click', handleTabBtnClick);
 });
 
-//* Select mobile
-//* Клик по кнопке - открыть/закрыть
-const openOptions = () => {
-  selectOptions.classList.toggle('active');
+const dropDownButton = document.querySelector('.select-teachers__btn');
+const dropDownList = document.querySelector('.select-teachers__list');
+const dropDownListItem = dropDownList.querySelectorAll('.select-teachers__list-item');
+const textInnerButton = document.querySelector('.select-teachers__text');
+
+
+const handleDropDownListToggle = () => {
+  dropDownList.classList.toggle('active');
 };
 
-openOptionsBtn.addEventListener('click', openOptions);
+dropDownButton.addEventListener('click', handleDropDownListToggle);
 
-//* выбрать элемент из списка / закрыть дропдаун
-function selectedOption (event) {
-  event.stopPropagation();
-  openOptionsBtn.innerText = this.innerText;
-  selectOptions.classList.remove('active');
+const handleDropDownListClose = () => {
+  dropDownList.classList.remove('active');
+};
+
+closeModalBtn.addEventListener('click', handleModalClose);
+
+function handleTextChangeInnerBtn (){
+  textInnerButton.innerText = this.innerText;
+  handleDropDownListClose();
 }
 
-openOptionOne.forEach ((option) => {
-  option.addEventListener('click', selectedOption)
+dropDownListItem.forEach((listItem) => {
+  listItem.addEventListener('click', handleTextChangeInnerBtn)
 });
 
-//* клик снаружи дропдауна - закрыть дропдаун:
-const closeOptionsOnBackdropClick = (event) => {
-  if(event.target !== openOptionsBtn) {
-    selectOptions.classList.remove('active');
-  }
-};
+// const handleOutsideSelectClick = (event) => {
+//   if(event.target !== dropDownButton) {
+//     handleDropDownListClose();
+//   }
+// };
 
-modal.addEventListener('click', closeOptionsOnBackdropClick);
+// modal.addEventListener('click', handleOutsideSelectClick);
 
-//* крестик
-const closeMobile = () => {
-  modal.classList.remove('open');
-};
-
-closeMobileBtn.addEventListener('click', closeMobile);
-
-//* Options
-const setActiveOption = (optionOne, id) => {
-  optionOne.classList.remove('active');
-  const activeOption = document.querySelector(`.select-teachers__option[data-value="${id}"]`);
-  activeOption.classList.add('active');
+const setActiveItem = (listItem, id) => {
+  listItem.classList.remove('active');
+  const activeItem = document.querySelector(`.select-teachers__list-item[data-tab="${id}"]`);
+  activeItem.classList.add('active');
 }
 
-const onOptionOneClick = (event) => {
-  const dataId = event.target.getAttribute('data-value');
+const handleItemClick = (event) => {
+  const dataId = event.target.getAttribute('data-tab');
 
   contentTabs.forEach((tabContent) => {
     setActiveTabContent(tabContent, dataId);
   });
 
-  openOptionOne.forEach((optionOne) => {
-    setActiveOption(optionOne, dataId);
+  dropDownListItem.forEach((listItem) => {
+    setActiveItem(listItem, dataId);
   });
 }
 
-openOptionOne.forEach((optionOne) => {
-  optionOne.addEventListener('click', onOptionOneClick);
+dropDownListItem.forEach((item) => {
+  item.addEventListener('click', handleItemClick);
 });
-

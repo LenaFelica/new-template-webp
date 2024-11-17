@@ -32,32 +32,46 @@
     height: 770px;
 
     .close-modal-btn {
-      position: absolute;
-      right: 40px;
-      top: 40px;
-      width: auto;
-      height: auto;
-      font-size: 18px;
-      line-height: 160%;
-      color: $text-color-primary-70;
+      &__deckstop {
+        position: absolute;
+        right: 40px;
+        top: 40px;
+        width: auto;
+        height: auto;
+        font-size: 18px;
+        line-height: 160%;
+        color: $text-color-primary-70;
 
-      &:hover {
-        color: $button-color-primary;
+        &:hover {
+          color: $button-color-primary;
+        }
+      }
+      &__mobile {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        width: 44px;
+        height: 44px;
       }
     }
 
-    .close-mobile-btn {
-      display: none;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      right: 15px;
-      top: 15px;
-      border: 1px solid #fff;
-      border-radius: 10px;
-      width: 44px;
-      height: 44px;
-    }
+    // .close-mobile-btn {
+    //   display: none;
+    //   justify-content: center;
+    //   align-items: center;
+    //   position: absolute;
+    //   right: 15px;
+    //   top: 15px;
+    //   border: 1px solid #fff;
+    //   border-radius: 10px;
+    //   width: 44px;
+    //   height: 44px;
+    // }
 
     .content-top {
       gap: 40px;
@@ -160,51 +174,56 @@
 
 .select-teachers {
   position: relative;
+  display: none;
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: 30px;
 
   &__btn {
-    display: none;
-    -webkit-appearance: none;
-    appearance: none;
+    position: relative;
     width: 100%;
     cursor: pointer;
     border: 1px solid #fff;
     padding: 10px;
-    position: relative;
     background-color: $bg-color-tertiary;
     color: $text-color-secondary;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
     font-size: 16px;
     z-index: 1;
+    gap: 10px;
+  }
 
+  &__img {
     .arrow {
       width: 10px;
       height: 10px;
-      pointer-events: none;
     }
   }
 
-  &__options {
+  &__list {
     display: none;
+    flex-direction: column;
     position: absolute;
-    top: 74px;
+    top: 100%;
     left: 0;
     width: 100%;
     z-index: 1;
 
     &.active {
-      display: block;
+      display: flex;
     }
-  }
 
-  &__option {
-    display: none;
-    width: 100%;
-    padding: 10px;
-    background-color: $bg-color-tertiary;
-    color: $text-color-secondary;
-    text-align: center;
-    border: 1px solid #fff;
-    border-bottom: 0;
+    &-item {
+      width: 100%;
+      padding: 10px;
+      background-color: $bg-color-tertiary;
+      color: $text-color-secondary;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #fff;
+      border-bottom: 0;
+    }
   }
 }
 
@@ -215,18 +234,28 @@
       height: auto;
 
       .close-modal-btn {
-        display: none;
+        &__deckstop {
+          display: none;
+        }
+
+        &__mobile {
+          display: flex;
+        }
       }
 
       .select-teachers {
-          &__btn {
-            display: block;
-            margin-top: 30px;
-          }
-          &__option {
-            display: block;
+        display: flex;
+
+        &__btn {
+          display: flex;
+        }
+
+        &__list {
+          &-item {
+            display: flex;
           }
         }
+      }
 
       .content-top {
         gap: 20px;
@@ -272,10 +301,6 @@
             }
           }
         }
-      }
-
-      .close-mobile-btn {
-        display: flex;
       }
     }
   }
