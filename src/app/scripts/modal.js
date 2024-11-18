@@ -1,22 +1,28 @@
+//* modal
 const openModalBtns = document.querySelectorAll('.teachers-item__btn')
 const closeModalBtn = document.querySelector('.close-modal-btn');
-const modal = document.querySelector('.modal');
+const modal = document.querySelector('#modal');
 const tabButtons = document.querySelectorAll('.tabs-menu__btn');
 const contentTabs = document.querySelectorAll('.tabcontent');
 
+//* dropdown
+const selectContainer = document.querySelector('.select-teachers');
+const dropDownButton = document.querySelector('.select-teachers__btn');
+const dropDownList = document.querySelector('.select-teachers__list');
+const dropDownListItems = document.querySelectorAll('.select-teachers__list-item');
+const textInnerButton = document.querySelector('.select-teachers__text');
+
+//* open-close modal
 const handleModalOpen = () => {
   modal.classList.add('open');
+  document.body.classList.add('unscroll');
 };
-
-openModalBtns.forEach((btn) => {
-  btn.addEventListener('click', handleModalOpen);
-});
 
 const handleModalClose = () => {
   modal.classList.remove('open');
+  document.body.classList.remove('unscroll');
+  setActiveTab(1);
 };
-
-closeModalBtn.addEventListener('click', handleModalClose);
 
 const handleOutsideModalClick = (event) => {
   if (event.target !== modal) {
@@ -25,6 +31,12 @@ const handleOutsideModalClick = (event) => {
 
   handleModalClose();
 };
+
+openModalBtns.forEach((btn) => {
+  btn.addEventListener('click', handleModalOpen);
+});
+
+closeModalBtn.addEventListener('click', handleModalClose);
 
 window.addEventListener('keydown', (event) => {
   if (!event.key == 'Escape' || !modal.classList.contains('open')) {
@@ -36,87 +48,83 @@ window.addEventListener('keydown', (event) => {
 
 modal.addEventListener('click', handleOutsideModalClick);
 
-const setActiveTabContent = (tabContent, id) => {
-  tabContent.classList.remove('active');
+//* set active tab
+const setActiveTabContent = (id) => {
   const activeTabContent = document.querySelector(`.tabcontent[data-tab="${id}"]`);
   activeTabContent.classList.add('active');
-}
+};
 
-const setActiveTabBtn = (tabButton, id) => {
-  tabButton.classList.remove('active');
+const setActiveTabBtn = (id) => {
   const activeTabBtn = document.querySelector(`.tabs-menu__btn[data-tab="${id}"]`);
   activeTabBtn.classList.add('active');
-}
+};
 
-const handleTabBtnClick = (event) => {
-  const dataId = event.target.getAttribute('data-tab');
-
+const setActiveTab = (id) => {
   contentTabs.forEach((tabContent) => {
-    setActiveTabContent(tabContent, dataId);
+    tabContent.classList.remove('active');
   });
 
   tabButtons.forEach((tabButton) => {
-    setActiveTabBtn(tabButton, dataId)
+    tabButton.classList.remove('active');
   });
-}
+
+  setActiveTabContent(id);
+  setActiveTabBtn(id);
+  setActiveItem(id);
+};
+
+const handleTabBtnClick = (event) => {
+  const dataId = event.target.getAttribute('data-tab');
+  setActiveTab(dataId);
+};
 
 tabButtons.forEach((tabButton) => {
   tabButton.addEventListener('click', handleTabBtnClick);
 });
 
-const dropDownButton = document.querySelector('.select-teachers__btn');
-const dropDownList = document.querySelector('.select-teachers__list');
-const dropDownListItem = dropDownList.querySelectorAll('.select-teachers__list-item');
-const textInnerButton = document.querySelector('.select-teachers__text');
-
-
-const handleDropDownListToggle = () => {
-  dropDownList.classList.toggle('active');
+//* dropdown
+const handleDropDownListOpen = (event) => {
+  event.stopPropagation();
+  dropDownList.classList.add('active');
 };
-
-dropDownButton.addEventListener('click', handleDropDownListToggle);
 
 const handleDropDownListClose = () => {
   dropDownList.classList.remove('active');
 };
 
+dropDownButton.addEventListener('click', handleDropDownListOpen);
+
 closeModalBtn.addEventListener('click', handleModalClose);
 
-function handleTextChangeInnerBtn (){
-  textInnerButton.innerText = this.innerText;
-  handleDropDownListClose();
-}
+//* select items
+const handleOutsideSelectClick = (event) => {
+  if(event.target !== selectContainer) {
+    handleDropDownListClose();
+  }
+};
 
-dropDownListItem.forEach((listItem) => {
-  listItem.addEventListener('click', handleTextChangeInnerBtn)
-});
+modal.addEventListener('click', handleOutsideSelectClick);
 
-// const handleOutsideSelectClick = (event) => {
-//   if(event.target !== dropDownButton) {
-//     handleDropDownListClose();
-//   }
-// };
+const handleItemActiveRemove = () => {
+  dropDownListItems.forEach((item) => {
+    item.classList.remove('active');
+  });
+};
 
-// modal.addEventListener('click', handleOutsideSelectClick);
-
-const setActiveItem = (listItem, id) => {
-  listItem.classList.remove('active');
+const setActiveItem = (id) => {
+  handleItemActiveRemove();
   const activeItem = document.querySelector(`.select-teachers__list-item[data-tab="${id}"]`);
+  textInnerButton.innerText = activeItem.innerText;
   activeItem.classList.add('active');
-}
+};
 
 const handleItemClick = (event) => {
   const dataId = event.target.getAttribute('data-tab');
+  setActiveTab(dataId);
+  setActiveItem(dataId);
+  handleDropDownListClose();
+};
 
-  contentTabs.forEach((tabContent) => {
-    setActiveTabContent(tabContent, dataId);
-  });
-
-  dropDownListItem.forEach((listItem) => {
-    setActiveItem(listItem, dataId);
-  });
-}
-
-dropDownListItem.forEach((item) => {
+dropDownListItems.forEach((item) => {
   item.addEventListener('click', handleItemClick);
 });
