@@ -246,9 +246,14 @@
         </div>
       </div>
     </footer>
-  <div id="my-modal" class="modal">
+  <div id="modal" class="modal">
       <div class="modal-content">
-        <button id="close-modal-btn" class="close-modal-btn" aria-label="Закрыть модалку">Закрыть</button>
+        <button class="close-modal-btn" id="close-modal-btn" aria-label="Закрыть модалку">
+          <span class="close-modal-btn__desktop">Закрыть</span>
+          <span class="close-modal-btn__mobile">
+            <img class="close-mobile-icon" src="/static/img/icons/close black.svg" alt="">
+          </span>
+        </button>
         <div class="content-top">
           <img class="content-top__img" src="static/img/trainers/ira.jpg" alt="ira">
           <div class="content-top__info">
@@ -264,6 +269,20 @@
             </div>
           </div>
         </div>
+          <div class="select-teachers">
+              <button class="select-teachers__btn">
+                <span class="select-teachers__text">Образование</span>
+                <span class="select-teachers__img">
+                  <img class="arrow" src="/static/img/icons/arrow-down.svg" alt="">
+                </span>
+              </button>
+
+              <div class="select-teachers__list">
+                <button class="select-teachers__list-item active" data-tab="1">Образование</button>
+                <button class="select-teachers__list-item" data-tab="2">Опыт работы</button>
+                <button class="select-teachers__list-item" data-tab="3">Награды</button>
+              </div>
+          </div>
         <div class="content-bottom">
           <div class="content-bottom__tabs">
             <div class="tabs-menu">
