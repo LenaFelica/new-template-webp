@@ -74,7 +74,7 @@ const setActiveTab = (id) => {
 };
 
 const handleTabBtnClick = (event) => {
-  const dataId = event.target.getAttribute('data-tab');
+  const dataId = event.target.dataset.tab;
   setActiveTab(dataId);
 };
 
@@ -99,27 +99,27 @@ closeModalBtn.addEventListener('click', handleModalClose);
 //* select items
 const handleOutsideSelectClick = (event) => {
   if(event.target !== selectContainer) {
-    handleDropDownListClose();
+   handleDropDownListClose();
   }
 };
 
 modal.addEventListener('click', handleOutsideSelectClick);
 
-const handleItemActiveRemove = () => {
+const removeActiveFromDropdownItems = () => {
   dropDownListItems.forEach((item) => {
-    item.classList.remove('active');
+   item.classList.remove('active');
   });
 };
 
 const setActiveItem = (id) => {
-  handleItemActiveRemove();
+  removeActiveFromDropdownItems();
   const activeItem = document.querySelector(`.select-teachers__list-item[data-tab="${id}"]`);
   textInnerButton.innerText = activeItem.innerText;
   activeItem.classList.add('active');
 };
 
 const handleItemClick = (event) => {
-  const dataId = event.target.getAttribute('data-tab');
+  const dataId = event.target.dataset.tab;
   setActiveTab(dataId);
   setActiveItem(dataId);
   handleDropDownListClose();
